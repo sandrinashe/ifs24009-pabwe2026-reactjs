@@ -58,7 +58,7 @@ function StatsPanel() {
           <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
             Statistik Laporan
           </h1>
-          <p className="text-sm text-slate-500 mt-1">
+          <p className="text-sm text-slate-600 mt-1">
             Pantau tren laporan barang hilang dan ditemukan.
           </p>
         </div>
@@ -82,13 +82,13 @@ function StatsPanel() {
       </div>
 
       {loading && !lostFoundStats ? (
-        <p className="py-12 text-center font-medium text-slate-500">
+        <p className="py-12 text-center font-medium text-slate-600">
           Memuat statistik...
         </p>
       ) : !lostFoundStats ? (
         <div
           data-testid="stats-empty"
-          className="py-12 text-center text-slate-400 bg-white rounded-2xl border border-slate-200/80"
+          className="py-12 text-center text-slate-600 bg-white rounded-2xl border border-slate-200/80"
         >
           <IconChartBar size={40} className="mx-auto text-slate-300 mb-2" />
           <p className="font-medium">Data statistik belum tersedia.</p>
@@ -106,18 +106,18 @@ function StatsPanel() {
                 className="bg-white rounded-2xl p-5 border border-slate-200/80 shadow-xs"
               >
                 <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-sm font-bold text-slate-700">
+                  <h2 className="text-sm font-bold text-slate-700">
                     {group.label}
-                  </h3>
+                  </h2>
                   <span className="text-2xl font-black text-slate-800">{sum}</span>
                 </div>
                 {series.length === 0 ? (
-                  <p className="text-xs text-slate-400">Belum ada data.</p>
+                  <p className="text-xs text-slate-600">Belum ada data.</p>
                 ) : (
                   <ul className="space-y-2">
                     {series.map((s, index) => (
                       <li key={`${s.label}-${index}`} className="flex items-center gap-3 text-xs">
-                        <span className="w-24 shrink-0 text-slate-500 truncate">
+                        <span className="w-24 shrink-0 text-slate-600 truncate">
                           {s.label}
                         </span>
                         <div className="flex-1 h-2 rounded-full bg-slate-100 overflow-hidden">

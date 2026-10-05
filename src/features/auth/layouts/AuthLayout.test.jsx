@@ -58,3 +58,13 @@ describe("AuthLayout", () => {
     expect(screen.getByText("Masuk Akun")).toBeInTheDocument();
   });
 });
+
+describe("AuthLayout active tab", () => {
+  it("should highlight register tab on /auth/register", () => {
+    vi.spyOn(apiHelper, "getAccessToken").mockReturnValue(null);
+    window.history.pushState({}, "", "/auth/register");
+    renderWithProviders(<AuthLayout />, { preloadedState: { profile: null } });
+    expect(screen.getByText("Daftar Baru").className).toContain("text-indigo-700");
+    expect(screen.getByText("Masuk Akun").className).not.toContain("text-indigo-700");
+  });
+});

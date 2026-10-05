@@ -84,13 +84,13 @@ function AddModal({ show, onClose }) {
             <div className="w-8 h-8 rounded-lg bg-indigo-100 text-indigo-700 flex items-center justify-center">
               <IconPlus size={18} stroke={2.5} />
             </div>
-            <h3 className="text-base font-bold text-slate-800">Tambah Laporan Baru</h3>
+            <h2 className="text-base font-bold text-slate-800">Tambah Laporan Baru</h2>
           </div>
           <button
             type="button"
             data-testid="close-add-modal-btn"
             onClick={onClose}
-            className="p-1.5 rounded-lg text-slate-400 hover:text-slate-600 hover:bg-slate-100 transition-colors"
+            className="p-1.5 rounded-lg text-slate-600 hover:text-slate-600 hover:bg-slate-100 transition-colors"
           >
             <IconX size={18} />
           </button>
@@ -98,25 +98,25 @@ function AddModal({ show, onClose }) {
 
         <form onSubmit={handleSave} className="p-6 space-y-4">
           <div>
-            <label className="block text-sm font-semibold text-slate-700 mb-1.5">
+            <label htmlFor="add-lost-found-title-input" className="block text-sm font-semibold text-slate-700 mb-1.5">
               Judul Laporan <span className="text-red-500">*</span>
             </label>
-            <input
+            <input id="add-lost-found-title-input"
               type="text"
               data-testid="add-lost-found-title-input"
               value={title}
               onChange={changeTitle}
               placeholder="Contoh: Dompet cokelat hilang di kantin"
-              className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 bg-white text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-600 transition-all text-sm"
+              className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 bg-white text-slate-800 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-600 transition-all text-sm"
               required
             />
           </div>
 
           <div>
-            <label className="block text-sm font-semibold text-slate-700 mb-1.5">
+            <label htmlFor="add-lost-found-status-select" className="block text-sm font-semibold text-slate-700 mb-1.5">
               Jenis Laporan <span className="text-red-500">*</span>
             </label>
-            <select
+            <select id="add-lost-found-status-select"
               data-testid="add-lost-found-status-select"
               value={status}
               onChange={changeStatus}
@@ -128,16 +128,16 @@ function AddModal({ show, onClose }) {
           </div>
 
           <div>
-            <label className="block text-sm font-semibold text-slate-700 mb-1.5">
+            <label htmlFor="add-lost-found-description-input" className="block text-sm font-semibold text-slate-700 mb-1.5">
               Deskripsi <span className="text-red-500">*</span>
             </label>
-            <textarea
+            <textarea id="add-lost-found-description-input"
               data-testid="add-lost-found-description-input"
               value={description}
               onChange={changeDescription}
               rows={4}
               placeholder="Tuliskan ciri-ciri barang, lokasi, dan waktu kejadian..."
-              className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 bg-white text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-600 transition-all text-sm resize-none"
+              className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 bg-white text-slate-800 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-600 transition-all text-sm resize-none"
               required
             />
           </div>

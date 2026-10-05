@@ -39,11 +39,11 @@ function NavbarComponent({ profile, handleLogout, onToggleSidebar, isSidebarOpen
           </button>
 
           <Link to="/" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 to-cyan-500 flex items-center justify-center text-white shadow-md shadow-indigo-500/20 group-hover:scale-105 transition-transform">
+            <div className="w-10 h-10 rounded-xl bg-indigo-600 flex items-center justify-center text-white shadow-md shadow-indigo-500/20 group-hover:scale-105 transition-transform">
               <IconMapSearch size={22} stroke={2.5} />
             </div>
             <div>
-              <span className="text-lg font-bold bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-800 bg-clip-text text-transparent">
+              <span className="text-lg font-bold text-slate-900">
                 Delcom Lost & Founds
               </span>
             </div>
@@ -65,7 +65,7 @@ function NavbarComponent({ profile, handleLogout, onToggleSidebar, isSidebarOpen
                 className="w-8 h-8 rounded-full object-cover border border-slate-200"
               />
             ) : (
-              <div className="w-8 h-8 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 text-white flex items-center justify-center font-bold text-xs">
+              <div className="w-8 h-8 rounded-full bg-indigo-700 text-white flex items-center justify-center font-bold text-xs">
                 {profile?.name?.charAt(0)?.toUpperCase() || "U"}
               </div>
             )}
@@ -73,13 +73,13 @@ function NavbarComponent({ profile, handleLogout, onToggleSidebar, isSidebarOpen
               <span className="text-sm font-semibold text-slate-800 leading-tight">
                 {profile?.name || "Pengguna"}
               </span>
-              <span className="text-xs text-slate-500 leading-tight">
+              <span className="text-xs text-slate-600 leading-tight">
                 {profile?.email || ""}
               </span>
             </div>
             <IconChevronDown
               size={16}
-              className={`text-slate-400 transition-transform duration-200 ${
+              className={`text-slate-600 transition-transform duration-200 ${
                 dropdownOpen ? "rotate-180" : ""
               }`}
             />
@@ -92,7 +92,7 @@ function NavbarComponent({ profile, handleLogout, onToggleSidebar, isSidebarOpen
             >
               <div className="px-3 py-2 sm:hidden">
                 <p className="text-sm font-semibold text-slate-800">{profile?.name}</p>
-                <p className="text-xs text-slate-500 truncate">{profile?.email}</p>
+                <p className="text-xs text-slate-600 truncate">{profile?.email}</p>
               </div>
 
               <div className="py-1">
@@ -105,7 +105,7 @@ function NavbarComponent({ profile, handleLogout, onToggleSidebar, isSidebarOpen
                   }}
                   className="w-full flex items-center gap-2.5 px-3 py-2 text-sm text-slate-700 rounded-xl hover:bg-slate-100 transition-colors text-left"
                 >
-                  <IconUser size={18} className="text-slate-500" />
+                  <IconUser size={18} className="text-slate-600" />
                   Profil Saya
                 </button>
               </div>

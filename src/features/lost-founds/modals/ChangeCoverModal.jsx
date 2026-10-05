@@ -86,13 +86,13 @@ function ChangeCoverModal({ show, onClose, lostFound }) {
             <div className="w-8 h-8 rounded-lg bg-sky-100 text-sky-700 flex items-center justify-center">
               <IconPhotoUp size={18} stroke={2.5} />
             </div>
-            <h3 className="text-base font-bold text-slate-800">Ubah Cover Laporan</h3>
+            <h2 className="text-base font-bold text-slate-800">Ubah Cover Laporan</h2>
           </div>
           <button
             type="button"
             data-testid="close-cover-modal-btn"
             onClick={onClose}
-            className="p-1.5 rounded-lg text-slate-400 hover:text-slate-600 hover:bg-slate-100 transition-colors"
+            className="p-1.5 rounded-lg text-slate-600 hover:text-slate-600 hover:bg-slate-100 transition-colors"
           >
             <IconX size={18} />
           </button>
@@ -103,7 +103,7 @@ function ChangeCoverModal({ show, onClose, lostFound }) {
             <label className="block text-sm font-semibold text-slate-700 mb-2">
               Pilih Gambar Cover
             </label>
-            <label className="flex flex-col items-center justify-center w-full h-44 border-2 border-dashed border-slate-300 hover:border-indigo-500 rounded-2xl cursor-pointer bg-slate-50/50 hover:bg-indigo-50/20 transition-all overflow-hidden relative">
+            <label htmlFor="cover-file-input" className="flex flex-col items-center justify-center w-full h-44 border-2 border-dashed border-slate-300 hover:border-indigo-500 rounded-2xl cursor-pointer bg-slate-50/50 hover:bg-indigo-50/20 transition-all overflow-hidden relative">
               {previewUrl ? (
                 <img
                   src={previewUrl}
@@ -118,10 +118,10 @@ function ChangeCoverModal({ show, onClose, lostFound }) {
                   <p className="text-sm font-semibold text-slate-700">
                     Klik untuk memilih foto
                   </p>
-                  <p className="text-xs text-slate-500 mt-1">PNG, JPG, JPEG (Max. 1MB)</p>
+                  <p className="text-xs text-slate-600 mt-1">PNG, JPG, JPEG (Max. 1MB)</p>
                 </div>
               )}
-              <input
+              <input id="cover-file-input"
                 type="file"
                 data-testid="cover-file-input"
                 accept=".jpg,.jpeg,.png"

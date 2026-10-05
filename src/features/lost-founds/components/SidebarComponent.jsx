@@ -63,7 +63,7 @@ function SidebarComponent({ isSidebarOpen, onCloseMobile }) {
         <div className="flex flex-col h-full justify-between">
           <div className="space-y-6">
             <div>
-              <p className="px-3 text-xs font-bold uppercase tracking-wider text-slate-400">
+              <p className="px-3 text-xs font-bold uppercase tracking-wider text-slate-600">
                 Menu Utama
               </p>
               <nav className="mt-3 space-y-1">
@@ -92,7 +92,7 @@ function SidebarComponent({ isSidebarOpen, onCloseMobile }) {
                           className={
                             active
                               ? "text-white"
-                              : "text-slate-400 group-hover:text-slate-600"
+                              : "text-slate-600 group-hover:text-slate-600"
                           }
                         />
                         <span>{item.label}</span>
@@ -106,11 +106,11 @@ function SidebarComponent({ isSidebarOpen, onCloseMobile }) {
           </div>
 
           {/* Footer note in sidebar */}
-          <div className="p-3 rounded-2xl bg-gradient-to-br from-indigo-50 to-slate-50 border border-indigo-100/60">
+          <div className="p-3 rounded-2xl bg-indigo-50 border border-indigo-100/60">
             <p className="text-xs font-semibold text-indigo-900">
               Delcom Lost &amp; Founds
             </p>
-            <p className="text-xs text-indigo-700/80 mt-0.5">
+            <p className="text-xs text-indigo-800 mt-0.5">
               Praktikum PABWE 2026
             </p>
           </div>

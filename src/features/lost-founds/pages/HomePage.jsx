@@ -244,7 +244,7 @@ function HomePage() {
           <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
             Laporan Lost &amp; Founds
           </h1>
-          <p className="text-sm text-slate-500 mt-1">
+          <p className="text-sm text-slate-600 mt-1">
             Kelola dan pantau laporan barang hilang dan barang temuan.
           </p>
         </div>
@@ -270,12 +270,12 @@ function HomePage() {
               className="bg-white rounded-2xl p-5 border border-slate-200/80 shadow-xs flex items-center justify-between"
             >
               <div>
-                <p className="text-xs font-semibold uppercase tracking-wider text-slate-400">
+                <p className="text-xs font-semibold uppercase tracking-wider text-slate-600">
                   {card.label}
                 </p>
-                <h3 className={`text-3xl font-black mt-1 ${card.valueClass}`}>
+                <h2 className={`text-3xl font-black mt-1 ${card.valueClass}`}>
                   {card.value}
-                </h3>
+                </h2>
               </div>
               <div
                 className={`w-12 h-12 rounded-2xl flex items-center justify-center ${card.boxClass}`}
@@ -294,15 +294,16 @@ function HomePage() {
             <div className="relative flex-1 max-w-md">
               <IconSearch
                 size={18}
-                className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400"
+                className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-600"
               />
               <input
                 type="text"
                 data-testid="search-lost-found-input"
+                aria-label="Cari laporan"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Cari judul atau deskripsi laporan..."
-                className="w-full pl-10 pr-4 py-2 text-sm rounded-xl border border-slate-200 bg-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-600 transition-all"
+                className="w-full pl-10 pr-4 py-2 text-sm rounded-xl border border-slate-200 bg-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-600 transition-all"
               />
             </div>
 
@@ -332,13 +333,13 @@ function HomePage() {
 
           <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6">
             <div className="flex items-center gap-2.5">
-              <span className="text-xs font-semibold text-slate-500 uppercase tracking-wide flex items-center gap-1.5">
+              <span className="text-xs font-semibold text-slate-600 uppercase tracking-wide flex items-center gap-1.5">
                 <IconFilter size={16} /> Jenis:
               </span>
               {renderSegment("filter-status", STATUS_FILTERS, statusFilter, setStatusFilter)}
             </div>
             <div className="flex items-center gap-2.5">
-              <span className="text-xs font-semibold text-slate-500 uppercase tracking-wide">
+              <span className="text-xs font-semibold text-slate-600 uppercase tracking-wide">
                 Penyelesaian:
               </span>
               {renderSegment(
@@ -352,12 +353,12 @@ function HomePage() {
         </div>
 
         {loadingList && isEmpty ? (
-          <div className="px-6 py-12 text-center text-slate-400">
+          <div className="px-6 py-12 text-center text-slate-600">
             <IconLoader2 size={36} className="mx-auto text-indigo-600 animate-spin mb-2" />
             <p className="font-medium text-slate-600">Memuat daftar laporan...</p>
           </div>
         ) : isEmpty ? (
-          <div className="px-6 py-12 text-center text-slate-400">
+          <div className="px-6 py-12 text-center text-slate-600">
             <IconListDetails size={40} className="mx-auto text-slate-300 mb-2" />
             <p className="font-medium">Belum ada laporan yang cocok.</p>
           </div>
@@ -385,8 +386,8 @@ function HomePage() {
                     <CompletedBadge isCompleted={item.is_completed} />
                   </div>
                   <p className="font-semibold text-slate-800 leading-snug">{item.title}</p>
-                  <p className="text-xs text-slate-500 line-clamp-2">{item.description}</p>
-                  <p className="text-xs text-slate-400 mt-auto pt-2">
+                  <p className="text-xs text-slate-600 line-clamp-2">{item.description}</p>
+                  <p className="text-xs text-slate-600 mt-auto pt-2">
                     {formatDate(item.created_at)}
                   </p>
                 </div>
@@ -397,7 +398,7 @@ function HomePage() {
         ) : (
           <div className="overflow-x-auto">
             <table className="w-full text-left text-sm text-slate-600">
-              <thead className="bg-slate-50/80 text-xs uppercase tracking-wider font-semibold text-slate-500 border-b border-slate-100">
+              <thead className="bg-slate-50/80 text-xs uppercase tracking-wider font-semibold text-slate-600 border-b border-slate-100">
                 <tr>
                   <th className="px-5 py-3.5 text-center w-16">ID</th>
                   <th className="px-5 py-3.5">Judul</th>
@@ -414,7 +415,7 @@ function HomePage() {
                     data-testid={`lost-found-row-${item.id}`}
                     className="hover:bg-slate-50/70 transition-colors group"
                   >
-                    <td className="px-5 py-4 text-center font-mono text-xs font-bold text-slate-400">
+                    <td className="px-5 py-4 text-center font-mono text-xs font-bold text-slate-600">
                       #{item.id}
                     </td>
                     <td className="px-5 py-4">
@@ -430,7 +431,7 @@ function HomePage() {
                           <p className="font-semibold text-slate-800 leading-snug">
                             {item.title}
                           </p>
-                          <p className="text-xs text-slate-400 line-clamp-1 mt-0.5">
+                          <p className="text-xs text-slate-600 line-clamp-1 mt-0.5">
                             {item.description}
                           </p>
                         </div>
@@ -439,7 +440,7 @@ function HomePage() {
                     <td className="px-5 py-4">
                       <StatusBadge status={item.status} />
                     </td>
-                    <td className="px-5 py-4 hidden md:table-cell text-xs text-slate-500">
+                    <td className="px-5 py-4 hidden md:table-cell text-xs text-slate-600">
                       {formatDate(item.created_at)}
                     </td>
                     <td className="px-5 py-4">

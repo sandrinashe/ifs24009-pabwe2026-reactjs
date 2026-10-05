@@ -140,7 +140,7 @@ function DetailPage() {
         <div className="p-6 sm:p-8 space-y-6">
           <div className="space-y-3">
             <div className="flex flex-wrap items-center gap-2.5">
-              <span className="font-mono text-xs font-bold text-slate-400">
+              <span className="font-mono text-xs font-bold text-slate-600">
                 #{lostFound.id}
               </span>
               {isLost ? (
@@ -177,7 +177,7 @@ function DetailPage() {
               {lostFound.title}
             </h1>
 
-            <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-slate-400">
+            <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-slate-600">
               <div
                 data-testid="detail-reporter"
                 className="flex items-center gap-2"
@@ -193,7 +193,7 @@ function DetailPage() {
                 )}
                 <span>
                   Pelapor:{" "}
-                  <strong className="text-slate-500">
+                  <strong className="text-slate-600">
                     {author?.name || "Tidak diketahui"}
                   </strong>
                 </span>
@@ -202,7 +202,7 @@ function DetailPage() {
                 <IconCalendar size={14} className="shrink-0" />
                 <span>
                   Dilaporkan:{" "}
-                  <strong className="text-slate-500">
+                  <strong className="text-slate-600">
                     {formatDate(lostFound.created_at)}
                   </strong>
                 </span>
@@ -211,7 +211,7 @@ function DetailPage() {
                 <IconCalendar size={14} className="shrink-0" />
                 <span>
                   Diperbarui:{" "}
-                  <strong className="text-slate-500">
+                  <strong className="text-slate-600">
                     {formatDate(lostFound.updated_at)}
                   </strong>
                 </span>

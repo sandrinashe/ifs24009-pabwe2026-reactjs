@@ -98,13 +98,13 @@ function ChangeModal({ show, onClose, lostFoundId }) {
             <div className="w-8 h-8 rounded-lg bg-amber-100 text-amber-700 flex items-center justify-center">
               <IconEdit size={18} stroke={2.5} />
             </div>
-            <h3 className="text-base font-bold text-slate-800">Ubah Data Laporan</h3>
+            <h2 className="text-base font-bold text-slate-800">Ubah Data Laporan</h2>
           </div>
           <button
             type="button"
             data-testid="close-edit-modal-btn"
             onClick={onClose}
-            className="p-1.5 rounded-lg text-slate-400 hover:text-slate-600 hover:bg-slate-100 transition-colors"
+            className="p-1.5 rounded-lg text-slate-600 hover:text-slate-600 hover:bg-slate-100 transition-colors"
           >
             <IconX size={18} />
           </button>
@@ -112,10 +112,10 @@ function ChangeModal({ show, onClose, lostFoundId }) {
 
         <form onSubmit={handleSave} className="p-6 space-y-4">
           <div>
-            <label className="block text-sm font-semibold text-slate-700 mb-1.5">
+            <label htmlFor="edit-lost-found-title-input" className="block text-sm font-semibold text-slate-700 mb-1.5">
               Judul Laporan <span className="text-red-500">*</span>
             </label>
-            <input
+            <input id="edit-lost-found-title-input"
               type="text"
               data-testid="edit-lost-found-title-input"
               value={title}
@@ -126,10 +126,10 @@ function ChangeModal({ show, onClose, lostFoundId }) {
           </div>
 
           <div>
-            <label className="block text-sm font-semibold text-slate-700 mb-1.5">
+            <label htmlFor="edit-lost-found-status-select" className="block text-sm font-semibold text-slate-700 mb-1.5">
               Jenis Laporan
             </label>
-            <select
+            <select id="edit-lost-found-status-select"
               data-testid="edit-lost-found-status-select"
               value={status}
               onChange={(e) => setStatus(e.target.value)}
@@ -140,11 +140,11 @@ function ChangeModal({ show, onClose, lostFoundId }) {
             </select>
           </div>
 
-          <label className="flex items-center justify-between gap-3 px-3.5 py-3 rounded-xl border border-slate-200 bg-slate-50/60 cursor-pointer">
+          <label htmlFor="edit-lost-found-completed-toggle" className="flex items-center justify-between gap-3 px-3.5 py-3 rounded-xl border border-slate-200 bg-slate-50/60 cursor-pointer">
             <span className="text-sm font-semibold text-slate-700">
               Laporan sudah selesai
             </span>
-            <input
+            <input id="edit-lost-found-completed-toggle"
               type="checkbox"
               role="switch"
               data-testid="edit-lost-found-completed-toggle"
@@ -155,10 +155,10 @@ function ChangeModal({ show, onClose, lostFoundId }) {
           </label>
 
           <div>
-            <label className="block text-sm font-semibold text-slate-700 mb-1.5">
+            <label htmlFor="edit-lost-found-description-input" className="block text-sm font-semibold text-slate-700 mb-1.5">
               Deskripsi <span className="text-red-500">*</span>
             </label>
-            <textarea
+            <textarea id="edit-lost-found-description-input"
               data-testid="edit-lost-found-description-input"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
